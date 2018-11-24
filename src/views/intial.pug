@@ -1,0 +1,13 @@
+html
+  head
+    style
+      include ../static/intial.css
+    script
+      include ../static/intial.js
+  body
+    h1 Get user details
+    div
+      label
+        Enter user email:
+      input
+      input(type="button" value="Get user" onclick="getUsers()")
