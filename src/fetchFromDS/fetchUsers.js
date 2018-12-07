@@ -6,4 +6,11 @@ const getUsersFromDS = async (count) => {
   return snap.val();
 };
 
+export const getUserByUserName = async (userName) => {
+  const dbUsersRef = admin.database().ref('users');
+  const snap = await dbUsersRef.orderByChild('name/first').equalTo(userName.toLowerCase()).limitToFirst(1).once('value');
+  console.log('val', snap.val());
+  return snap.val();
+};
+
 export default getUsersFromDS;

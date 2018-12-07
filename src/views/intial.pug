@@ -10,4 +10,8 @@ html
       label
         Enter user email:
       input
-      input(type="button" value="Get user" onclick="getUsers()")
+      input(type="button" value="Get user" onclick="getUsers(this)")
+      if name
+        include ./userDetails.pug
+      if error
+        p User not found
